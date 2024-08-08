@@ -1,0 +1,8 @@
+.descricao {
+    flex-direction: column;
+    text-align: left;
+    line-height: 0.5;
+}
+h5::before {
+    content: "°";
+}
