@@ -1,10 +1,79 @@
-import MeusProdutos from './MeusProdutos.json'
+//import MeusProdutos from './MeusProdutos.json'
 import CardBike from './CardBike.jsx'
 import { useEffect, useState } from 'react'
 //import Descricao from './Descricao.jsx'
 import "./BikeList.css"
+function Coisa() {
+    return <div>oi</div>
+}
+
 export default function BikeList() {
-    const bikesOrige = MeusProdutos
+    const bikesOrige = [
+        {
+            "descricao":<Coisa />,
+            "id": 1,
+            "nomeModelo": "Primary",
+            "preco": "R$ 200",
+            "categoria": "Entrada",
+            "imgSrc": "https:origamid.com/projetos/bikcraft/img/bicicletas/magic-home.jpg"
+        },
+        {
+            "id": 2,
+            "nomeModelo": "Primary 2",
+            "preco": "R$ 280",
+            "categoria": "Entrada",
+            "imgSrc": "https:origamid.com/projetos/bikcraft/img/bicicletas/magic-home.jpg"
+        },
+        {
+            "id": 3,
+            "nomeModelo": "Primary 3",
+            "preco": "R$ 360",
+            "categoria": "Entrada",
+            "imgSrc": "https:origamid.com/projetos/bikcraft/img/bicicletas/magic-home.jpg"
+        },
+        {
+            "id": 1,
+            "nomeModelo": "Sport",
+            "preco": "R$ 600",
+            "categoria": "intermediario",
+            "imgSrc": "https://origamid.com/projetos/bikcraft/img/bicicletas/nimbus-home.jpg"
+        },
+        {
+            "id": 2,
+            "nomeModelo": "Sport Casual",
+            "preco": "R$ 700",
+            "categoria": "intermediario",
+            "imgSrc": "https://origamid.com/projetos/bikcraft/img/bicicletas/nimbus-home.jpg"
+        },
+        {
+            "id": 3,
+            "nomeModelo": "Sport Enthusiastic",
+            "preco": "R$ 1.200",
+            "categoria": "intermediario",
+            "imgSrc": "https://origamid.com/projetos/bikcraft/img/bicicletas/nimbus-home.jpg"
+        },
+        {
+            "id": 1,
+            "nomeModelo": "Super Speed",
+            "preco": "R$ 1.500",
+            "categoria": "Profissional",
+            "imgSrc": "https://origamid.com/projetos/bikcraft/img/bicicletas/nebula-home.jpg"
+        },
+        {
+            "id": 2,
+            "nomeModelo": "Super Speed Pro",
+            "preco": "R$ 2.200",
+            "categoria": "Profissional",
+            "imgSrc": "https://origamid.com/projetos/bikcraft/img/bicicletas/nebula-home.jpg"
+        },
+        {
+            "id": 3,
+            "nomeModelo": "Super Speed Deluxe",
+            "preco": "R$ 3.500",
+            "categoria": "Profissional",
+            "imgSrc": "https://origamid.com/projetos/bikcraft/img/bicicletas/nebula-home.jpg'"
+        }
+    ]
     function comprarBike() {
         alert('bike comprada')
 
