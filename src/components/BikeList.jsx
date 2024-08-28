@@ -27,6 +27,7 @@ export default function BikeList() {
         <>
             <div>
                 <div>
+
                     <button className='bnt' onClick={() => BntMudar('T')}>Mostar todos</button>
                     <button className='bnt' onClick={() => BntMudar('Entrada')}>Entrada</button>
                     <button className='bnt' onClick={() => BntMudar('intermediario')}>Intermediário</button>
