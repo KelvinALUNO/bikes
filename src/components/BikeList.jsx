@@ -1,37 +1,39 @@
 import CardBike from './CardBike.jsx'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import "./BikeList.css"
-import { produtos } from './MeusProdutos.jsx'
+import { produtos } from './MeusProdutos.js'
 
 
 export default function BikeList() {
     function comprarBike() {
         alert('bike comprada')
-
+        
     }
-    const [bikes, setBikes] = useState(produtos)
+    //const [bikes, setBikes] = useState(produtos)
     const [filtro, setFiltro] = useState('T')
-    useEffect(() => {
-        if (filtro === "T") {
-            setBikes(produtos)
-        } else {
-            const bikeFiltered = produtos.filter(bike => bike.categoria === filtro)
-            setBikes(bikeFiltered)
-        }
-    }, [filtro])
-    function BntMudar(categoria) {
-        setFiltro(categoria)
-    }
+    
+    const bikes = filtro=='T' ? getProdutosIniciais(produtos) : produtos.filter(bike => bike.categoria === filtro)
+    //console.log({produtos})
+   
+    // useEffect(() => {
+    //     if (filtro === "T") {
+    //         setBikes(produtos)
+    //     } else {
+    //         const bikeFiltered = produtos.filter(bike => bike.categoria === filtro)
+    //         setBikes(bikeFiltered)
+    //     }
+    // }, [filtro])
+    
 
     return (
         <>
             <div>
                 <div>
-
-                    <button className='bnt' onClick={() => BntMudar('T')}>Mostar todos</button>
-                    <button className='bnt' onClick={() => BntMudar('Entrada')}>Entrada</button>
-                    <button className='bnt' onClick={() => BntMudar('intermediario')}>Intermediário</button>
-                    <button className='bnt' onClick={() => BntMudar('Profissional')}>Profissional</button>
+                    {filtro}
+                    <button className='bnt' onClick={() => setFiltro('T')}>Mostar todos</button>
+                    <button className='bnt' onClick={() => setFiltro('Entrada')}>Entrada</button>
+                    <button className='bnt' onClick={() => setFiltro('intermediario')}>Intermediário</button>
+                    <button className='bnt' onClick={() => setFiltro('Profissional')}>Profissional</button>
                 </div>
 
                 <div className='list'>
@@ -45,5 +47,20 @@ export default function BikeList() {
             </div>
         </>
     )
+
+}
+
+function getProdutosIniciais(produtos) {
+    const categorias = []
+    const mostrar = []
+
+    produtos.forEach(p=>{
+        if(!categorias.includes(p.categoria)) {
+            mostrar.push(p)
+            categorias.push(p.categoria)
+        }
+    })
+
+    return mostrar
 
 }
